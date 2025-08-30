@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdjbqqvrxa8h1"]
+
+[ext_resource type="Script" uid="uid://b8o8l65tkrdgi" path="res://mouse_follower.gd" id="1_70rm8"]
+
+[node name="MouseFollower" type="Node2D"]
+script = ExtResource("1_70rm8")

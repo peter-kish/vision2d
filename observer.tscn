@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkkof64rwx7v7"]
+
+[ext_resource type="Texture2D" uid="uid://cmsgpj5m68q5y" path="res://icon.svg" id="1_4sv1y"]
+
+[sub_resource type="GDScript" id="GDScript_4sv1y"]
+script/source = "extends Node2D
+"
+
+[node name="Observer" type="Node2D"]
+script = SubResource("GDScript_4sv1y")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_4sv1y")
