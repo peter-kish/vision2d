@@ -1,15 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfvvv0losb0co"]
 
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://mouse_follower.tscn" id="1_5lk1q"]
-[ext_resource type="Script" uid="uid://t7msljbnof8t" path="res://vision_occluder.gd" id="1_dwqdi"]
+[ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://vision_occluder_line.gd" id="1_dwqdi"]
 [ext_resource type="PackedScene" uid="uid://dkkof64rwx7v7" path="res://observer.tscn" id="2_f2md2"]
 
 [node name="TestSimple" type="Node2D"]
 
-[node name="VisionOccluder" type="Line2D" parent="."]
+[node name="VisionOccluderLine" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
 position = Vector2(576, 256)
 points = PackedVector2Array(-64, 0, 64, 0)
 script = ExtResource("1_dwqdi")
+observer = NodePath("../MouseFollower/Observer")
 
 [node name="MouseFollower" parent="." instance=ExtResource("1_5lk1q")]
 position = Vector2(576, 384)
