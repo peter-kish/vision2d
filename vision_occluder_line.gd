@@ -4,6 +4,7 @@ extends Line2D
 @export var color = Color.BLACK
 @export var size = 128.0
 @export var penetration = 32.0
+@export var extra_vertices = 0;
 
 
 func _ready() -> void:
@@ -18,4 +19,5 @@ func _ready() -> void:
         occluder.color = color
         occluder.size = size
         occluder.penetration = penetration
+        occluder.extra_vertices = extra_vertices
         add_child(occluder)
