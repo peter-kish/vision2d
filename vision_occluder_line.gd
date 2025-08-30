@@ -3,7 +3,7 @@ extends Line2D
 @export var observer: Node2D
 @export var color = Color.BLACK
 @export var size = 128.0
-@export var offset = 32.0
+@export var penetration = 32.0
 
 
 func _ready() -> void:
@@ -17,5 +17,5 @@ func _ready() -> void:
         occluder.observer = observer
         occluder.color = color
         occluder.size = size
-        occluder.offset = offset
+        occluder.penetration = penetration
         add_child(occluder)
