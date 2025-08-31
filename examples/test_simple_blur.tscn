@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjla31xctmlpo"]
 
-[ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://vision_occluder_line.gd" id="1_sgnqs"]
-[ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://mouse_follower.tscn" id="2_c15eb"]
-[ext_resource type="PackedScene" uid="uid://dkkof64rwx7v7" path="res://observer.tscn" id="3_prck4"]
-[ext_resource type="Shader" uid="uid://bolop0mhavr35" path="res://blur.gdshader" id="4_c15eb"]
+[ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://addons/vision2d/vision_occluder_line.gd" id="1_sgnqs"]
+[ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="2_c15eb"]
+[ext_resource type="Texture2D" uid="uid://cmsgpj5m68q5y" path="res://icon.svg" id="2_rmlov"]
+[ext_resource type="Shader" uid="uid://bolop0mhavr35" path="res://examples/blur.gdshader" id="4_c15eb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c15eb"]
 shader = ExtResource("4_c15eb")
@@ -18,8 +18,9 @@ points = PackedVector2Array(-64, 0, 64, 0)
 [node name="MouseFollower" parent="." instance=ExtResource("2_c15eb")]
 position = Vector2(576, 384)
 
-[node name="Observer" parent="MouseFollower" instance=ExtResource("3_prck4")]
-script = null
+[node name="Observer" type="Sprite2D" parent="MouseFollower"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_rmlov")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
