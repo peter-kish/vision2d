@@ -1,6 +1,8 @@
 extends Line2D
 class_name VisionOccluderLine
 
+const _VisionOccluder = preload("vision_occluder.gd")
+
 @export var observer: Node2D
 @export var color = Color.BLACK
 @export var size = 128.0
@@ -13,7 +15,7 @@ func _ready() -> void:
         return
         
     for i in range(points.size() - 1):
-        var occluder = VisionOccluder.new()
+        var occluder = _VisionOccluder.new()
         occluder.start_point = points[i]
         occluder.end_point = points[i + 1]
         occluder.observer = observer

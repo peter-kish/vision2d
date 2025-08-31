@@ -1,5 +1,4 @@
 extends Polygon2D
-class_name VisionOccluder
 
 @export var start_point: Vector2
 @export var end_point: Vector2

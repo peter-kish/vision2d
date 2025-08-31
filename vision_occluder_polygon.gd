@@ -1,6 +1,8 @@
 extends Polygon2D
 class_name VisionOccluderPolygon
 
+const _VisionOccluder = preload("vision_occluder.gd")
+
 @export var observer: Node2D
 @export var shadow_color = Color.BLACK
 @export var size = 128.0
@@ -13,7 +15,7 @@ func _ready() -> void:
         return
         
     for i in range(polygon.size()):
-        var occluder = VisionOccluder.new()
+        var occluder = _VisionOccluder.new()
         occluder.start_point = polygon[i]
         occluder.end_point = polygon[(i + 1) % polygon.size()]
         occluder.observer = observer
