@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjla31xctmlpo"]
+
+[ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://vision_occluder_line.gd" id="1_sgnqs"]
+[ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://mouse_follower.tscn" id="2_c15eb"]
+[ext_resource type="PackedScene" uid="uid://dkkof64rwx7v7" path="res://observer.tscn" id="3_prck4"]
+[ext_resource type="Shader" uid="uid://bolop0mhavr35" path="res://blur.gdshader" id="4_c15eb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c15eb"]
+shader = ExtResource("4_c15eb")
+shader_parameter/lod = 4.0
+
+[node name="TestSimple" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(576, 256)
+points = PackedVector2Array(-64, 0, 64, 0)
+
+[node name="MouseFollower" parent="." instance=ExtResource("2_c15eb")]
+position = Vector2(576, 384)
+
+[node name="Observer" parent="MouseFollower" instance=ExtResource("3_prck4")]
+script = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="VisionOccluderLine" type="Line2D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("observer")]
+position = Vector2(576, 256)
+points = PackedVector2Array(-64, 0, 64, 0)
+default_color = Color(1, 1, 1, 0)
+script = ExtResource("1_sgnqs")
+observer = NodePath("../../../../MouseFollower/Observer")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+material = SubResource("ShaderMaterial_c15eb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
