@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b52ejyvyoomy3"]
+
+[ext_resource type="Script" uid="uid://bdtlq800kgfux" path="res://vision_occluder_polygon.gd" id="1_jnokf"]
+[ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://mouse_follower.tscn" id="2_6o1l1"]
+[ext_resource type="PackedScene" uid="uid://dkkof64rwx7v7" path="res://observer.tscn" id="3_rtre0"]
+
+[node name="TestSimple" type="Node2D"]
+
+[node name="VisionOccluderPolygon" type="Polygon2D" parent="." node_paths=PackedStringArray("observer")]
+position = Vector2(576, 80)
+polygon = PackedVector2Array(-448, -16, 512, -16, 512, 16, 512, 432, 320, 432, 448, 304, 448, 176, 320, 144, 448, 112, 448, 16, -368, 16, -368, 176, -192, 176, -192, 240, -384, 240, -384, 16, -448, 16)
+script = ExtResource("1_jnokf")
+observer = NodePath("../MouseFollower/Observer")
+size = 1024.0
+
+[node name="MouseFollower" parent="." instance=ExtResource("2_6o1l1")]
+position = Vector2(576, 384)
+
+[node name="Observer" parent="MouseFollower" instance=ExtResource("3_rtre0")]
+script = null

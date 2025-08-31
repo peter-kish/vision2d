@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfvvv0losb0co"]
+
+[ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://vision_occluder_line.gd" id="1_lchbs"]
+[ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://mouse_follower.tscn" id="2_j6dpq"]
+[ext_resource type="PackedScene" uid="uid://dkkof64rwx7v7" path="res://observer.tscn" id="3_byt4u"]
+
+[node name="TestSimple" type="Node2D"]
+
+[node name="VisionOccluderLine" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
+position = Vector2(576, 256)
+points = PackedVector2Array(-64, 0, 64, 0)
+script = ExtResource("1_lchbs")
+observer = NodePath("../MouseFollower/Observer")
+
+[node name="MouseFollower" parent="." instance=ExtResource("2_j6dpq")]
+position = Vector2(576, 384)
+
+[node name="Observer" parent="MouseFollower" instance=ExtResource("3_byt4u")]
+script = null
