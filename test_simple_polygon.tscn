@@ -7,8 +7,8 @@
 [node name="TestSimple" type="Node2D"]
 
 [node name="VisionOccluderPolygon" type="Polygon2D" parent="." node_paths=PackedStringArray("observer")]
-position = Vector2(576, 80)
-polygon = PackedVector2Array(-448, -16, 512, -16, 512, 16, 512, 432, 320, 432, 448, 304, 448, 176, 320, 144, 448, 112, 448, 16, -368, 16, -368, 176, -192, 176, -192, 240, -384, 240, -384, 16, -448, 16)
+position = Vector2(576, 256)
+polygon = PackedVector2Array(-64, -16, 64, -16, 64, 16, -64, 16)
 script = ExtResource("1_jnokf")
 observer = NodePath("../MouseFollower/Observer")
 size = 1024.0
