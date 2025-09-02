@@ -14,6 +14,20 @@ script = ExtResource("4_x8kmg")
 observer = NodePath("../MouseFollower/Observer")
 size = 1024.0
 
+[node name="VisionOccluderPolygon2" type="Polygon2D" parent="." node_paths=PackedStringArray("observer")]
+polygon = PackedVector2Array(128, 512, 320, 512, 320, 448, 384, 448, 384, 512, 640, 512, 640, 576, 128, 576)
+script = ExtResource("4_x8kmg")
+observer = NodePath("../MouseFollower/Observer")
+size = 1024.0
+metadata/_custom_type_script = "uid://bdtlq800kgfux"
+
+[node name="VisionOccluderPolygon3" type="Polygon2D" parent="." node_paths=PackedStringArray("observer")]
+polygon = PackedVector2Array(640, 320, 640, 288, 672, 288, 672, 320)
+script = ExtResource("4_x8kmg")
+observer = NodePath("../MouseFollower/Observer")
+size = 1024.0
+metadata/_custom_type_script = "uid://bdtlq800kgfux"
+
 [node name="MouseFollower" parent="." instance=ExtResource("2_x8kmg")]
 position = Vector2(576, 384)
 

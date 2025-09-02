@@ -14,6 +14,20 @@ script = ExtResource("1_k3uqc")
 observer = NodePath("../MouseFollower/Observer")
 size = 1024.0
 
+[node name="VisionOccluderLine2" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
+points = PackedVector2Array(288, 192, 184, 480, 360, 592, 680, 552)
+script = ExtResource("1_k3uqc")
+observer = NodePath("../MouseFollower/Observer")
+size = 1024.0
+metadata/_custom_type_script = "uid://dybpsb5r0ashv"
+
+[node name="VisionOccluderLine3" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
+points = PackedVector2Array(384, 344, 464, 424)
+script = ExtResource("1_k3uqc")
+observer = NodePath("../MouseFollower/Observer")
+size = 1024.0
+metadata/_custom_type_script = "uid://dybpsb5r0ashv"
+
 [node name="MouseFollower" parent="." instance=ExtResource("2_ce37b")]
 position = Vector2(576, 384)
 
