@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://u37b64e02g8p"]
+[gd_scene load_steps=7 format=3 uid="uid://u37b64e02g8p"]
 
 [ext_resource type="Script" uid="uid://bdtlq800kgfux" path="res://addons/vision2d/vision_occluder_polygon.gd" id="1_3fi3w"]
 [ext_resource type="Shader" uid="uid://bolop0mhavr35" path="res://examples/blur.gdshader" id="2_5fghp"]
 [ext_resource type="Texture2D" uid="uid://cmsgpj5m68q5y" path="res://icon.svg" id="2_t32tn"]
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="3_wnvo4"]
+[ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="5_b55jc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3fi3w"]
 shader = ExtResource("2_5fghp")
@@ -53,3 +54,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TestUI" parent="." instance=ExtResource("5_b55jc")]

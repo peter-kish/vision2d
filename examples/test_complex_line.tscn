@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkw3xqbjsmaac"]
+[gd_scene load_steps=5 format=3 uid="uid://dkw3xqbjsmaac"]
 
 [ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://addons/vision2d/vision_occluder_line.gd" id="1_k3uqc"]
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="2_ce37b"]
 [ext_resource type="Texture2D" uid="uid://cmsgpj5m68q5y" path="res://icon.svg" id="3_ojo4n"]
+[ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="4_ru3m7"]
 
 [node name="TestSimple" type="Node2D"]
 
@@ -19,3 +20,5 @@ position = Vector2(576, 384)
 [node name="Observer" type="Sprite2D" parent="MouseFollower"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_ojo4n")
+
+[node name="TestUI" parent="." instance=ExtResource("4_ru3m7")]
