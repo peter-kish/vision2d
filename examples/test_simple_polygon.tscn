@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdtlq800kgfux" path="res://addons/vision2d/vision_occluder_polygon.gd" id="1_jnokf"]
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="2_6o1l1"]
-[ext_resource type="Texture2D" uid="uid://cmsgpj5m68q5y" path="res://icon.svg" id="3_x1t3d"]
+[ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://vision2d_blue.svg" id="3_dywy7"]
 [ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="4_dywy7"]
 
 [node name="TestSimple" type="Node2D"]
@@ -18,7 +18,7 @@ size = 1024.0
 position = Vector2(576, 384)
 
 [node name="Observer" type="Sprite2D" parent="MouseFollower"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_x1t3d")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_dywy7")
 
 [node name="TestUI" parent="." instance=ExtResource("4_dywy7")]
