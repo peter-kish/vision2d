@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjla31xctmlpo"]
 
 [ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://addons/vision2d/vision_occluder_line.gd" id="1_sgnqs"]
-[ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://vision2d_blue.svg" id="2_8bsu1"]
+[ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://images/vision2d_blue.svg" id="2_8bsu1"]
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="2_c15eb"]
 [ext_resource type="Shader" uid="uid://bolop0mhavr35" path="res://examples/blur.gdshader" id="4_c15eb"]
 [ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="5_8bsu1"]
@@ -10,7 +10,7 @@
 shader = ExtResource("4_c15eb")
 shader_parameter/lod = 4.0
 
-[node name="TestSimple" type="Node2D"]
+[node name="TestSimpleBlur" type="Node2D"]
 
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(576, 256)

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://addons/vision2d/vision_occluder_line.gd" id="1_k3uqc"]
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="2_ce37b"]
-[ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://vision2d_blue.svg" id="3_ru3m7"]
+[ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://images/vision2d_blue.svg" id="3_ru3m7"]
 [ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="4_ru3m7"]
 
-[node name="TestSimple" type="Node2D"]
+[node name="TestComplexLine" type="Node2D"]
 
 [node name="VisionOccluderLine" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
 position = Vector2(576, 256)

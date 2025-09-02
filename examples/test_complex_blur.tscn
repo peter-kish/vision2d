@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdtlq800kgfux" path="res://addons/vision2d/vision_occluder_polygon.gd" id="1_3fi3w"]
 [ext_resource type="Shader" uid="uid://bolop0mhavr35" path="res://examples/blur.gdshader" id="2_5fghp"]
-[ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://vision2d_blue.svg" id="2_b55jc"]
+[ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://images/vision2d_blue.svg" id="2_b55jc"]
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="3_wnvo4"]
 [ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="5_b55jc"]
 
@@ -10,7 +10,7 @@
 shader = ExtResource("2_5fghp")
 shader_parameter/lod = 4.0
 
-[node name="TestSimple" type="Node2D"]
+[node name="TestComplexBlur" type="Node2D"]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(576, 80)
