@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://images/vision2d_blue.svg" id="3_fkbpt"]
 [ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="4_fkbpt"]
 
-[node name="TestSimple" type="Node2D"]
+[node name="TestSimpleLine" type="Node2D"]
 
 [node name="VisionOccluderLine" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
 position = Vector2(576, 256)

@@ -6,7 +6,7 @@ class_name VisionOccluderLine
 const _VisionOccluder = preload("vision_occluder.gd")
 
 @export var observer: Node2D
-@export var color = Color.BLACK
+@export var shadow_color = Color.BLACK
 @export var size = 128.0
 @export var penetration = 32.0
 @export var max_segment_size = 16.0;
@@ -21,7 +21,7 @@ func _ready() -> void:
         occluder.start_point = points[i]
         occluder.end_point = points[i + 1]
         occluder.observer = observer
-        occluder.color = color
+        occluder.color = shadow_color
         occluder.size = size
         occluder.penetration = penetration
         occluder.max_segment_size = max_segment_size
