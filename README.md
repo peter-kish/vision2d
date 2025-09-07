@@ -29,7 +29,7 @@ Both nodes have the following properties:
 
 1. Create an `addons` directory inside your project directory.
 2. Get the plugin from the AssetLib or from GitHub
-    * From the AssetLib: Open the AssetLib from the Godot editor and search for "Primitives2D". Click download to install the plugin.
+    * From the AssetLib: Open the AssetLib from the Godot editor and search for "Vision2D". Click download to install the plugin.
     * From GitHub: Run `git clone https://github.com/peter-kish/vision2d.git` and copy the contents of the `addons` directory to your projects `addons` directory.
 4. Enable the plugin in `Project Settings > Plugins`.
 
