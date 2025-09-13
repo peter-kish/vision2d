@@ -46,7 +46,24 @@ func _set_max_segment_size(new_max_segment_size: float) -> void:
             (c as _VisionOccluder).max_segment_size = max_segment_size
 
 
+func _set(name, value) -> bool:
+    if name == "polygon":
+        polygon = value
+        _recreate_segments()
+        return true
+    return false
+
+
 func _ready() -> void:
+    _recreate_segments()
+
+
+func _recreate_segments() -> void:
+    for c in get_children():
+        if c is _VisionOccluder:
+            remove_child(c)
+            c.queue_free()
+
     if polygon.size() < 3:
         return
         
