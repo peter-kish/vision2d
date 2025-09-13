@@ -5,7 +5,10 @@ extends Polygon2D
 @export var observer: Node2D
 @export var size = 128.0
 @export var penetration = 32.0
-@export var max_segment_size = 16.0;
+@export var max_segment_size = 16.0 :
+    set(new_max_segment_size):
+        max_segment_size = new_max_segment_size
+        _resize_polygon()
 
 class VisionVertices:
     var close: Vector2
@@ -13,6 +16,10 @@ class VisionVertices:
 
 
 func _ready() -> void:
+    _resize_polygon()
+
+
+func _resize_polygon() -> void:
     var polygon_points = []
     polygon_points.resize(_get_total_vertices())
     polygon = PackedVector2Array(polygon_points)
