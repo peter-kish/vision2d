@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://u37b64e02g8p"]
+[gd_scene format=3 uid="uid://u37b64e02g8p"]
 
 [ext_resource type="Script" uid="uid://bdtlq800kgfux" path="res://addons/vision2d/vision_occluder_polygon.gd" id="1_3fi3w"]
 [ext_resource type="Shader" uid="uid://bolop0mhavr35" path="res://examples/blur.gdshader" id="2_5fghp"]
@@ -10,30 +10,30 @@
 shader = ExtResource("2_5fghp")
 shader_parameter/lod = 4.0
 
-[node name="TestComplexBlur" type="Node2D"]
+[node name="TestComplexBlur" type="Node2D" unique_id=643514561]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=550945115]
 position = Vector2(576, 80)
 polygon = PackedVector2Array(-448, -16, 512, -16, 512, 16, 512, 432, 320, 432, 448, 304, 448, 176, 320, 144, 448, 112, 448, 16, -368, 16, -368, 176, -192, 176, -192, 240, -384, 240, -384, 16, -448, 16)
 
-[node name="Polygon2D2" type="Polygon2D" parent="."]
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1125574298]
 position = Vector2(576, 80)
 polygon = PackedVector2Array(64, 208, 96, 208, 96, 240, 64, 240)
 
-[node name="Polygon2D3" type="Polygon2D" parent="."]
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=86441579]
 position = Vector2(576, 80)
 polygon = PackedVector2Array(-448, 432, -256, 432, -256, 368, -192, 368, -192, 432, 64, 432, 64, 496, -448, 496)
 
-[node name="MouseFollower" parent="." instance=ExtResource("3_wnvo4")]
+[node name="MouseFollower" parent="." unique_id=438021528 instance=ExtResource("3_wnvo4")]
 position = Vector2(576, 384)
 
-[node name="Observer" type="Sprite2D" parent="MouseFollower"]
+[node name="Observer" type="Sprite2D" parent="MouseFollower" unique_id=1948725133]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_b55jc")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1233046070]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=40549933]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -41,13 +41,13 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=604447408]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="VisionOccluderPolygon" type="Polygon2D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("observer")]
+[node name="VisionOccluderPolygon" type="Polygon2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=679476072 node_paths=PackedStringArray("observer")]
 position = Vector2(576, 80)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-448, -16, 512, -16, 512, 16, 512, 432, 320, 432, 448, 304, 448, 176, 320, 144, 448, 112, 448, 16, -368, 16, -368, 176, -192, 176, -192, 240, -384, 240, -384, 16, -448, 16)
@@ -55,7 +55,7 @@ script = ExtResource("1_3fi3w")
 observer = NodePath("../../../../MouseFollower/Observer")
 size = 1024.0
 
-[node name="VisionOccluderPolygon2" type="Polygon2D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("observer")]
+[node name="VisionOccluderPolygon2" type="Polygon2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1832361063 node_paths=PackedStringArray("observer")]
 position = Vector2(0, -1)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(128, 512, 320, 512, 320, 448, 384, 448, 384, 512, 640, 512, 640, 576, 128, 576)
@@ -64,7 +64,7 @@ observer = NodePath("../../../../MouseFollower/Observer")
 size = 1024.0
 metadata/_custom_type_script = "uid://bdtlq800kgfux"
 
-[node name="VisionOccluderPolygon3" type="Polygon2D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("observer")]
+[node name="VisionOccluderPolygon3" type="Polygon2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=2036109945 node_paths=PackedStringArray("observer")]
 position = Vector2(0, -1)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(640, 320, 640, 288, 672, 288, 672, 320)
@@ -73,7 +73,7 @@ observer = NodePath("../../../../MouseFollower/Observer")
 size = 1024.0
 metadata/_custom_type_script = "uid://bdtlq800kgfux"
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=89312453]
 material = SubResource("ShaderMaterial_3fi3w")
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,4 +81,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TestUI" parent="." instance=ExtResource("5_b55jc")]
+[node name="TestUI" parent="." unique_id=709960763 instance=ExtResource("5_b55jc")]

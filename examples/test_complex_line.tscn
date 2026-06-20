@@ -1,38 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkw3xqbjsmaac"]
+[gd_scene format=3 uid="uid://dkw3xqbjsmaac"]
 
 [ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://addons/vision2d/vision_occluder_line.gd" id="1_k3uqc"]
 [ext_resource type="PackedScene" uid="uid://bdjbqqvrxa8h1" path="res://examples/mouse_follower.tscn" id="2_ce37b"]
 [ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://images/vision2d_blue.svg" id="3_ru3m7"]
 [ext_resource type="PackedScene" uid="uid://b0fxx1xl4ea63" path="res://examples/test_ui.tscn" id="4_ru3m7"]
 
-[node name="TestComplexLine" type="Node2D"]
+[node name="TestComplexLine" type="Node2D" unique_id=1156842308]
 
-[node name="VisionOccluderLine" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
+[node name="VisionOccluderLine" type="Line2D" parent="." unique_id=1065222158 node_paths=PackedStringArray("observer")]
 position = Vector2(576, 256)
 points = PackedVector2Array(-64, 0, 64, 0, 216, 56, 256, 144, 264, 256, 440, 288, 480, 136, 488, -80, 352, -184, -448, -192)
 script = ExtResource("1_k3uqc")
 observer = NodePath("../MouseFollower/Observer")
 size = 1024.0
 
-[node name="VisionOccluderLine2" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
+[node name="VisionOccluderLine2" type="Line2D" parent="." unique_id=262063378 node_paths=PackedStringArray("observer")]
 points = PackedVector2Array(288, 192, 184, 480, 360, 592, 680, 552)
 script = ExtResource("1_k3uqc")
 observer = NodePath("../MouseFollower/Observer")
 size = 1024.0
 metadata/_custom_type_script = "uid://dybpsb5r0ashv"
 
-[node name="VisionOccluderLine3" type="Line2D" parent="." node_paths=PackedStringArray("observer")]
+[node name="VisionOccluderLine3" type="Line2D" parent="." unique_id=2097511043 node_paths=PackedStringArray("observer")]
 points = PackedVector2Array(384, 344, 464, 424)
 script = ExtResource("1_k3uqc")
 observer = NodePath("../MouseFollower/Observer")
 size = 1024.0
 metadata/_custom_type_script = "uid://dybpsb5r0ashv"
 
-[node name="MouseFollower" parent="." instance=ExtResource("2_ce37b")]
+[node name="MouseFollower" parent="." unique_id=850095864 instance=ExtResource("2_ce37b")]
 position = Vector2(576, 384)
 
-[node name="Observer" type="Sprite2D" parent="MouseFollower"]
+[node name="Observer" type="Sprite2D" parent="MouseFollower" unique_id=795055150]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_ru3m7")
 
-[node name="TestUI" parent="." instance=ExtResource("4_ru3m7")]
+[node name="TestUI" parent="." unique_id=1534890701 instance=ExtResource("4_ru3m7")]

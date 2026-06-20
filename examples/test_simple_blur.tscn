@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjla31xctmlpo"]
+[gd_scene format=3 uid="uid://bjla31xctmlpo"]
 
 [ext_resource type="Script" uid="uid://dybpsb5r0ashv" path="res://addons/vision2d/vision_occluder_line.gd" id="1_sgnqs"]
 [ext_resource type="Texture2D" uid="uid://idxs53vjqfcv" path="res://images/vision2d_blue.svg" id="2_8bsu1"]
@@ -10,22 +10,22 @@
 shader = ExtResource("4_c15eb")
 shader_parameter/lod = 4.0
 
-[node name="TestSimpleBlur" type="Node2D"]
+[node name="TestSimpleBlur" type="Node2D" unique_id=973007860]
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Line2D" type="Line2D" parent="." unique_id=111097587]
 position = Vector2(576, 256)
 points = PackedVector2Array(-64, 0, 64, 0)
 
-[node name="MouseFollower" parent="." instance=ExtResource("2_c15eb")]
+[node name="MouseFollower" parent="." unique_id=1882068195 instance=ExtResource("2_c15eb")]
 position = Vector2(576, 384)
 
-[node name="Observer" type="Sprite2D" parent="MouseFollower"]
+[node name="Observer" type="Sprite2D" parent="MouseFollower" unique_id=1580293384]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_8bsu1")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1493216046]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1653324781]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,20 +33,20 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=229219901]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="VisionOccluderLine" type="Line2D" parent="CanvasLayer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("observer")]
+[node name="VisionOccluderLine" type="Line2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1255296658 node_paths=PackedStringArray("observer")]
 position = Vector2(576, 256)
 points = PackedVector2Array(-64, 0, 64, 0)
 default_color = Color(1, 1, 1, 0)
 script = ExtResource("1_sgnqs")
 observer = NodePath("../../../../MouseFollower/Observer")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=504496816]
 material = SubResource("ShaderMaterial_c15eb")
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,4 +54,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TestUI" parent="." instance=ExtResource("5_8bsu1")]
+[node name="TestUI" parent="." unique_id=1842542782 instance=ExtResource("5_8bsu1")]
