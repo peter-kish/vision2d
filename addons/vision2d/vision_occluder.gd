@@ -5,7 +5,7 @@ extends Polygon2D
 @export var observer: Node2D
 @export var size = 128.0
 @export var penetration = 32.0
-@export var max_segment_size = 16.0 :
+@export var max_segment_size = 16.0:
     set(new_max_segment_size):
         max_segment_size = new_max_segment_size
         _resize_polygon()
@@ -31,12 +31,14 @@ func _process(_delta: float) -> void:
 
     var local_obs_position = to_local(observer.global_position)
 
+    var polygon_copy := polygon
     @warning_ignore("integer_division") var total_vertices_2 = _get_total_vertices() / 2
     for i in range(total_vertices_2):
         var mid_point = _get_mid_point(start_point, end_point, i, total_vertices_2 - 1)
         var vertices := _get_vision_vertices(mid_point, local_obs_position)
-        polygon[i] = vertices.close
-        polygon[_get_far_vertex_idx(i)] = vertices.far
+        polygon_copy[i] = vertices.close
+        polygon_copy[_get_far_vertex_idx(i)] = vertices.far
+    polygon = polygon_copy
 
 
 func _get_vision_vertices(v: Vector2, from: Vector2) -> VisionVertices:
@@ -64,4 +66,3 @@ func _get_extra_vertices() -> int:
 
 func _get_total_vertices() -> int:
     return (_get_extra_vertices() + 2) * 2
-    
